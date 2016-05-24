@@ -1,0 +1,27 @@
+{
+  "name": "mean-stack",
+  "version": "0.0.1",
+  "description": "MEAN Stack Tutorial Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-stennett-volusion/meanstack.git"
+  },
+  "author": "John S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-stennett-volusion/meanstack/issues"
+  },
+  "homepage": "https://github.com/john-stennett-volusion/meanstack#readme",
+  "dependencies": {
+    "mongoose": "^4.4.19"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.5.2"
+  }
+}
