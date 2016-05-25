@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;;AAEA,IAAI,SAAS,QAAQ,UAAR,CAAb;;AAEA,SAAS,MAAT,CAAgB,IAAhB;AACA,QAAQ,GAAR,CAAY,gCAAZ","file":"app-compiled.js","sourcesContent":["'use strict';\n\nlet server = require('./server');\n\nserver().listen(3000);\nconsole.log('Server listening on port 3000!');"]}

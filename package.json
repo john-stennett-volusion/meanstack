@@ -4,7 +4,7 @@
   "description": "MEAN Stack Tutorial Project",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha ./tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +17,16 @@
   },
   "homepage": "https://github.com/john-stennett-volusion/meanstack#readme",
   "dependencies": {
-    "mongoose": "^4.4.19"
+    "express": "^4.13.4",
+    "http-status": "^0.2.2",
+    "mongoose": "^4.4.19",
+    "wagner-core": "^0.2.0"
   },
   "devDependencies": {
+    "assert": "^1.4.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^2.2.0",
-    "mocha": "^2.5.2"
+    "mocha": "^2.5.2",
+    "superagent": "^2.0.0-alpha.3"
   }
 }
