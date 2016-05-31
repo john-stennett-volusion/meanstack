@@ -4,6 +4,7 @@
   "description": "MEAN Stack Tutorial Project",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha ./tests/test.js"
   },
   "repository": {
@@ -20,6 +21,7 @@
     "express": "^4.13.4",
     "http-status": "^0.2.2",
     "mongoose": "^4.4.19",
+    "underscore": "^1.8.3",
     "wagner-core": "^0.2.0"
   },
   "devDependencies": {

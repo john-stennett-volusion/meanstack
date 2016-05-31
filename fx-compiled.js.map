@@ -1,0 +1,1 @@
+{"version":3,"sources":["fx.js"],"names":[],"mappings":"AAAA;;AAEA,OAAO,OAAP,GAAiB,MAAM;AACtB,QAAO;AACN,OAAK,CADC;AAEN,OAAK,GAFC;AAGN,OAAK;AAHC,EAAP;AAKA,CAND","file":"fx-compiled.js","sourcesContent":["'use strict';\n\nmodule.exports = () => {\n\treturn {\n\t\tUSD: 1,\n\t\tEUR: 1.1,\n\t\tGBP: 1.5\n\t};\n};"]}

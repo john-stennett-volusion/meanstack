@@ -1,17 +1,18 @@
 'use strict';
 
-let gulp  = require('gulp');
-let mocha = require('gulp-mocha');
+let gulp     = require('gulp');
+let gulpExit = require('gulp-exit');
+let mocha    = require('gulp-mocha');
 
 gulp.task('test', () => {
 	gulp.
-		src('./tests/test.js').
+		src('./tests/*.js').
 		pipe(mocha()).
 		on('error', (err) => {
-			// this.emit('end');
+			gulpExit();
 		});
 });
 
 gulp.task('watch', () => {
-	gulp.watch(['./*.js', './**/*.js'], ['test']);
+	gulp.watch(['./*.js'], ['test']);
 });

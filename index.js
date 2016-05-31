@@ -1,18 +1,13 @@
 'use strict';
 
-let mongoose = require('mongoose');
-let productScheme = require('./schemas/products');
+let express = require('express');
+let wagner  = require('wagner-core');
 
-let Product = mongoose.model('Product', productScheme);
-let p = new Product({
-	name: 'test',
-	price: {
-		amount: 5,
-		currency: 'USD'
-	},
-	category: {
-		name: 'test'
-	}
-});
+require('./models')(wagner);
 
-console.log(p);
+let app = express();
+
+app.use('/api/v1', require('./api')(wagner));
+
+app.listen(3000);
+console.log('Listening on port 3000!');
