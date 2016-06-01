@@ -22,14 +22,16 @@
     "express": "^4.13.4",
     "http-status": "^0.2.2",
     "mongoose": "^4.4.19",
-    "underscore": "^1.8.3",
-    "wagner-core": "^0.2.0"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "assert": "^1.4.0",
+    "babel-core": "^6.9.1",
     "gulp": "^3.9.1",
+    "gulp-exit": "0.0.2",
     "gulp-mocha": "^2.2.0",
     "mocha": "^2.5.2",
-    "superagent": "^2.0.0-alpha.3"
+    "superagent": "^2.0.0-alpha.3",
+    "wagner-core": "^0.2.0"
   }
 }

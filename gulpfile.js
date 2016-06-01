@@ -14,5 +14,5 @@ gulp.task('test', () => {
 });
 
 gulp.task('watch', () => {
-	gulp.watch(['./**/*.js'], ['test']);
+	gulp.watch(['./*.js'], ['test']);
 });
