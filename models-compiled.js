@@ -14,20 +14,20 @@ module.exports = wagner => {
 		Product: Product
 	};
 
-	wagner.factory('Category', () => {
-		return Category;
-	});
-
-	wagner.factory('Product', () => {
-		return Product;
-	});
+	// wagner.factory('Category', () => {
+	// 	return Category;
+	// });
+	//
+	// wagner.factory('Product', () => {
+	// 	return Product;
+	// });
 
 	// To ensure DRY-ness, register factories in a loop
-	// _.each(models, (value, key) => {
-	// 	wagner.factory(key, () => {
-	// 		return value;
-	// 	});
-	// });
+	_.each(models, (value, key) => {
+		wagner.factory(key, () => {
+			return value;
+		});
+	});
 
 	return models;
 };

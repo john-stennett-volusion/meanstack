@@ -92,7 +92,7 @@ describe('Category API', () => {
 		});
 	});
 
-	it.only('can load a product by id', done => {
+	it('can load a product by id', done => {
 		// Create a single Product
 		const PRODUCT_ID = '000000000000000000000001';
 		let product = {
