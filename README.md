@@ -30,7 +30,7 @@ npm install
 ### Running
 
 ```
-npm watch
+npm run watch
 ```
 
 OR
