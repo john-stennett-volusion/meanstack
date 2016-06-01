@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "watch": "gulp watch",
-    "test": "mocha ./tests/test.js"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",

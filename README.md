@@ -5,14 +5,15 @@ This is the code for the MEAN Stack Tutorial hosted on EdX.org:
 https://courses.edx.org/courses/course-v1:MongoDBx+M101x+3T2015/info
 
 
-### Prerequisites
+## Prerequisites
 
 You will need MongoDB setup and running:
 
 https://www.mongodb.com/download-center#community
 
 
-### MondoDB
+## MondoDB
+
 Make sure the directory "data/db" exists in your project, then run the following command:
 
 ```
@@ -20,21 +21,28 @@ Make sure the directory "data/db" exists in your project, then run the following
 ```
 
 
-### Installing
+## Installing
 
 ```
 npm install
 ```
 
 
-### Running
+## Running
 
 ```
-npm run watch
+npm start
 ```
 
 OR
 
 ```
-npm start
+npm run watch
+```
+
+
+## Testing 
+
+```
+npm run test
 ```
