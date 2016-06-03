@@ -1,15 +1,16 @@
 'use strict';
 
 let mongoose = require('mongoose');
-let _        = require('underscore');
+let _ = require('underscore');
 
-module.exports = (wagner) => {
+module.exports = wagner => {
 	if (mongoose.connection.readyState == 0) {
 		mongoose.connect('mongodb://localhost:27017/test');
 	}
 
 	let Category;
 	let Product;
+	let User;
 
 	if (mongoose.models.Category) {
 		Category = mongoose.model('Category');
@@ -23,17 +24,26 @@ module.exports = (wagner) => {
 		Product = mongoose.model('Product', require('./products'), 'products');
 	}
 
+	if (mongoose.models.User) {
+		User = mongoose.model('User');
+	} else {
+		User = mongoose.model('User', require('./users'), 'users');
+	}
+
 	let models = {
 		Category: Category,
-		Product: Product
+		Product: Product,
+		User: User
 	};
 
 	// To ensure DRY-ness, register factories in a loop
 	_.each(models, (value, key) => {
-		wagner.factory(key, () => {
-			return value;
+		return wagner.factory(key, stuff => {
+			return stuff;
 		});
 	});
 
 	return models;
 };
+
+//# sourceMappingURL=models-compiled.js.map

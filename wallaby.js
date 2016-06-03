@@ -2,7 +2,7 @@ var babel = require('babel-core');
 
 module.exports = function(){
 	return {
-		files: ['*.js'],
+		files: ['*.js', 'models/*.js'],
 		tests: ['tests/*.js'],
 		env: {
 			type: 'node',

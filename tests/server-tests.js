@@ -20,8 +20,9 @@ describe('server tests', () => {
 			assert.ifError(err);
 			assert.equal(res.status, 200);
 			assert.equal(res.text, "Hello, World!");
+		}).end(() => {
+			done();
 		});
-		done();
 	});
 
 	it('print out the user name in the string and undefined for the option', (done) => {
@@ -29,8 +30,9 @@ describe('server tests', () => {
 			assert.ifError(err);
 			assert.equal(res.statusCode, 200);
 			assert.equal(res.text, "Page for user mongoose with option undefined.");
+		}).end(() => {
+			done();
 		});
-		done();
 	});
 
 	it('print out the user name and option in the string', (done) => {
@@ -38,7 +40,8 @@ describe('server tests', () => {
 			assert.ifError(err);
 			assert.equal(res.statusCode, 200);
 			assert.equal(res.text, "Page for user mongoose with option banana.");
+		}).end(() => {
+			done();
 		});
-		done();
 	});
 });

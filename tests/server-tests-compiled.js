@@ -1,6 +1,6 @@
 'use strict';
 
-let app = require('../server');
+let app    = require('../server');
 let assert = require('assert');
 let superagent = require('superagent');
 

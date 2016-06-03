@@ -6,27 +6,6 @@ let status  = require('http-status');
 module.exports = (wagner) => {
 	let api = express.Router();
 
-	api.get('/product/id/:id', wagner.invoke((Product) => {
-		return (req, res) => {
-			Product.findOne({_id: req.params.id},
-				handleOne.bind(null, 'product', res));
-		};
-	}));
-
-	api.get('/product/category/:id', wagner.invoke((Product) => {
-		return (req, res) => {
-			let sort = {name: 1};
-
-			if (req.query.price === '1') {
-				sort = {'internal.approximatePriceUSD': 1};
-			} else if (req.query.price === '-1') {
-				sort = {'internal.approximatePriceUSD': -1};
-			}
-
-			Product.find({'category.ancestors': req.params.id}).sort(sort).exec(handleMany.bind(null, 'products', res));
-		};
-	}));
-
 	api.get('/category/id/:id', wagner.invoke((Category) => {
 		return (req, res) => {
 			Category.findOne({_id: req.params.id}, (error, category) => {
@@ -49,6 +28,27 @@ module.exports = (wagner) => {
 				}
 				res.json({categories: categories});
 			});
+		};
+	}));
+
+	api.get('/product/id/:id', wagner.invoke((Product) => {
+		return (req, res) => {
+			Product.findOne({_id: req.params.id},
+				handleOne.bind(null, 'product', res));
+		};
+	}));
+
+	api.get('/product/category/:id', wagner.invoke((Product) => {
+		return (req, res) => {
+			let sort = {name: 1};
+
+			if (req.query.price === '1') {
+				sort = {'internal.approximatePriceUSD': 1};
+			} else if (req.query.price === '-1') {
+				sort = {'internal.approximatePriceUSD': -1};
+			}
+
+			Product.find({'category.ancestors': req.params.id}).sort(sort).exec(handleMany.bind(null, 'products', res));
 		};
 	}));
 

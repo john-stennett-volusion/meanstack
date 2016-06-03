@@ -11,15 +11,13 @@ describe('Category API', () => {
 	let server;
 	let Category;
 	let Product;
-	let models;
 
 	before(() => {
 		let app = express();
 
 		// Bootstrap the Server
-		models = require('../models')(wagner);
+		let models = require('../models/models')(wagner);
 		app.use(require('../api')(wagner));
-
 		server = app.listen(3000);
 
 		// Make Category model available in tests.
@@ -38,8 +36,8 @@ describe('Category API', () => {
 			assert.ifError(err);
 			Product.remove({}, (err) => {
 				assert.ifError(err);
+				done();
 			});
-			done();
 		});
 	});
 
@@ -61,6 +59,7 @@ describe('Category API', () => {
 				});
 				assert.ok(result.category);
 				assert.equal(result.category._id, 'Electronics');
+			}).end(() => {
 				done();
 			});
 		});
@@ -92,39 +91,7 @@ describe('Category API', () => {
 				// Should be in ascending order by _id.
 				assert.equal(result.categories[0]._id, 'Laptops');
 				assert.equal(result.categories[1]._id, 'Phones');
-				done();
-			});
-		});
-	});
-
-	it('can load a product by id', (done) => {
-		// Create a single Product
-		const PRODUCT_ID = '000000000000000000000001';
-		let product = {
-			name: 'LG G4',
-			_id: PRODUCT_ID,
-			price: {
-				amount: 300,
-				currency: 'USD'
-			}
-		};
-
-		Product.create(product, (error, doc) => {
-			assert.ifError(error);
-
-			let url = `${URL_ROOT}/product/id/${PRODUCT_ID}`;
-
-			superagent.get(url, (error, res) => {
-				assert.ifError(error);
-
-				let result;
-				assert.doesNotThrow(() => {
-					result = JSON.parse(res.text);
-				});
-
-				assert.ok(result.product);
-				assert.equal(result.product._id, PRODUCT_ID);
-				assert.equal(result.product.name, 'LG G4');
+			}).end(() => {
 				done();
 			});
 		});
@@ -208,6 +175,7 @@ describe('Category API', () => {
 						assert.equal(result.products.length, 2);
 						assert.equal(result.products[0].name, 'LG G4');
 						assert.equal(result.products[1].name, 'ASUS Zenbook Prime');
+					}).end(() => {
 						done();
 					});
 				});

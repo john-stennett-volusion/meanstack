@@ -1,9 +1,9 @@
 var babel = require('babel-core');
 
-module.exports = function (wallaby) {
+module.exports = function () {
 	return {
-		files: ['*.js'],
-		tests: ['tests/api-tests.js'],
+		files: ['*.js', 'models/*.js'],
+		tests: ['tests/*.js'],
 		env: {
 			type: 'node',
 			runner: 'node'

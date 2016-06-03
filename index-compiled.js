@@ -3,7 +3,7 @@
 let express = require('express');
 let wagner = require('wagner-core');
 
-require('./models')(wagner);
+require('./models/models')(wagner);
 
 let app = express();
 
